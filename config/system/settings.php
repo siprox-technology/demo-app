@@ -2,7 +2,6 @@
 return [
     'BE' => [
         'debug' => false,
-        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$Wjl3YWxBb1hXalFEUzRzaA$JEWROfOrLFCJPX06BH9o78jW140aO7PitrxMp4st/rs',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -94,7 +93,7 @@ return [
         ],
         'devIPmask' => '',
         'displayErrors' => 0,
-        'encryptionKey' => 'a921c6b7fe987fa8cf7603bd6bc7dae0cf25804e6fdc62af3a008de46b0e1c5ccbf6781e665cd5507412de7a7cd25a19',
+        'encryptionKey' => 'f2724d5c862d28ddbad8036cbf95004e3d2db1cc08c6a90c713cfe89cf1f93e8ba94b5dcf52c0074fa45326e15d96d6a',
         'exceptionalErrors' => 4096,
         'features' => [
             'extbase.consistentDateTimeHandling' => true,
@@ -102,8 +101,5 @@ return [
             'security.system.enforceAllowedFileExtensions' => true,
         ],
         'sitename' => 'New TYPO3 site',
-        'systemMaintainers' => [
-            1,
-        ],
     ],
 ];

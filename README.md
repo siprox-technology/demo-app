@@ -1,66 +1,91 @@
-# TYPO3 CMS Base Distribution
+# TYPO3 Headless with Vue.js Frontend
 
-Get going quickly with TYPO3 CMS.
+This project demonstrates how to use TYPO3 CMS with the headless extension as a backend and Vue.js as a frontend.
+
+## Project Structure
+
+- `public/` - TYPO3 CMS public directory
+- `vendor/` - Composer dependencies, including the TYPO3 headless extension
+- `frontend/` - Vue.js frontend application
 
 ## Prerequisites
 
-* PHP 8.2
-* [Composer](https://getcomposer.org/download/)
+- PHP 8.2 or later
+- Composer
+- Node.js (v16 or later)
+- npm or yarn
+- DDEV (for local development)
 
-## Quickstart
+## Backend Setup (TYPO3 Headless)
 
-* `composer create-project typo3/cms-base-distribution project-name ^13`
-* `cd project-name`
+The project uses TYPO3 CMS with the [headless extension](https://github.com/TYPO3-Initiatives/headless) to provide a JSON API for the frontend.
 
-Note that this distribution installs most, but not all of the TYPO3 CMS core extensions.
-Depending on your need you might also want to install other TYPO3 extensions from
-[packagist.org](https://packagist.org/?type=typo3-cms-framework).
+### Local Development with DDEV
 
-### Setup
-
-To start an interactive installation, you can do so by executing the following
-command and then follow the wizard:
+1. Start the DDEV environment:
 
 ```bash
-composer exec typo3 setup
+ddev start
 ```
 
-### Setup unattended (optional)
+2. Access the TYPO3 backend at `https://demoapp.de.test/typo3`
 
-If you're a more advanced user, you might want to leverage the unattended installation.
-To do this, you need to execute the following command and substitute the arguments
-with your own environment configuration.
+### Content Setup
+
+1. Create pages and content elements in the TYPO3 backend
+2. The headless extension will automatically expose these as JSON via its API
+
+## Frontend Setup (Vue.js)
+
+The frontend is a Vue.js application that consumes the TYPO3 headless API.
+
+1. Install dependencies:
 
 ```bash
-export TYPO3_SETUP_ADMIN_PASSWORD=$(tr -dc "_A-Za-z0-9#=$()/" < /dev/urandom | head -c24)
-composer exec -- typo3 setup \
-    --no-interaction \
-    --server-type=other \
-    --driver=sqlite \
-    --admin-username=admin \
-    --admin-email="info@example.com" \
-    --project-name="My TYPO3 Project" \
-    --create-site="http://localhost:8000/"
-echo "Admin password: ${TYPO3_SETUP_ADMIN_PASSWORD}"
+cd frontend
+npm install
+# or
+yarn install
 ```
 
-### Development server
+2. Start the development server:
 
-While it's advised to use a more sophisticated web server such as
-Apache 2 or Nginx, you can instantly run the project by using PHPs` built-in
-[web server](https://secure.php.net/manual/en/features.commandline.webserver.php).
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-* `TYPO3_CONTEXT=Development php -S localhost:8000 -t public`
-* open your browser at "http://localhost:8000"
+The application will be available at http://localhost:5173 by default.
 
-Please be aware that the built-in web server is single threaded and only meant
-to be used for development.
+## API Endpoints
 
-##  Next steps
+The TYPO3 headless extension provides the following API endpoints:
 
-* [Getting Started with TYPO3](https://docs.typo3.org/permalink/t3start:start)
-* [Create a Site Package](https://docs.typo3.org/permalink/t3sitepackage:start)
+- `/api/page/{pageId}` - Get page data by ID
+- `/api/page/slug/{slug}` - Get page data by slug
+- `/api/menu/{pageId}` - Get menu data for a page
 
-## License
+## Deployment
 
-GPL-2.0 or later
+### Backend Deployment
+
+Deploy the TYPO3 CMS instance as you would normally deploy a TYPO3 project.
+
+### Frontend Deployment
+
+1. Build the frontend application:
+
+```bash
+cd frontend
+npm run build
+# or
+yarn build
+```
+
+2. Deploy the contents of the `frontend/dist` directory to your web server or CDN.
+
+## Further Documentation
+
+- [TYPO3 Headless Extension Documentation](https://github.com/TYPO3-Initiatives/headless)
+- [Vue.js Frontend Documentation](./frontend/README.md)

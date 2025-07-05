@@ -391,3 +391,9 @@ FileETag None
 
 
 # Add your own rules here.
+
+# Redirect root URL to the Vue.js frontend
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$ /frontend/ [R=301,L]
+</IfModule>

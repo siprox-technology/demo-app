@@ -1,8 +1,6 @@
-base: 'https://demoapp.de.test/'
+base: 'https://demoapp.de.test'
 dependencies:
-  - friendsoftypo3/headless
-frontendBase: ''
-headless: 1
+  - typo3/fluid-styled-content-css
 languages:
   -
     title: English
@@ -12,5 +10,5 @@ languages:
     locale: en_US.UTF-8
     navigationTitle: English
     flag: us
-rootPageId: 1
-websiteTitle: 'Demo app'
+rootPageId: 2
+websiteTitle: demoapp

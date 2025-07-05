@@ -2,7 +2,7 @@
 return [
     'BE' => [
         'debug' => false,
-        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$RHc2c2JpZkQvTzdVRFJrbw$AvbffeEm13f+uk4o4nY4d+VwD1D2SeS1f7SvrmgQQd0',
+        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$Wjl3YWxBb1hXalFEUzRzaA$JEWROfOrLFCJPX06BH9o78jW140aO7PitrxMp4st/rs',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -11,17 +11,8 @@ return [
     'DB' => [
         'Connections' => [
             'Default' => [
-                'charset' => 'utf8mb4',
-                'dbname' => 'db',
-                'defaultTableOptions' => [
-                    'charset' => 'utf8mb4',
-                    'collation' => 'utf8mb4_unicode_ci',
-                ],
+                'charset' => 'utf8',
                 'driver' => 'mysqli',
-                'host' => 'db',
-                'password' => 'db',
-                'port' => 3306,
-                'user' => 'db',
             ],
         ],
     ],
@@ -103,14 +94,14 @@ return [
         ],
         'devIPmask' => '',
         'displayErrors' => 0,
-        'encryptionKey' => '9efd2ade66e065c9277a6629abe227fe1dfcf55d34569dfb9106bb890317717986373ec2031edbd2b586f4e58d209dc9',
+        'encryptionKey' => 'a921c6b7fe987fa8cf7603bd6bc7dae0cf25804e6fdc62af3a008de46b0e1c5ccbf6781e665cd5507412de7a7cd25a19',
         'exceptionalErrors' => 4096,
         'features' => [
             'extbase.consistentDateTimeHandling' => true,
             'frontend.cache.autoTagging' => true,
             'security.system.enforceAllowedFileExtensions' => true,
         ],
-        'sitename' => 'My Demo app',
+        'sitename' => 'New TYPO3 site',
         'systemMaintainers' => [
             1,
         ],

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a751fdadce06bf32e23bd53515ca93ba",
+    "content-hash": "da2103b26f3b35428871411b93843540",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -811,6 +811,96 @@
                 "source": "https://github.com/firebase/php-jwt/tree/v6.11.1"
             },
             "time": "2025-04-09T20:32:01+00:00"
+        },
+        {
+            "name": "friendsoftypo3/headless",
+            "version": "v4.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-Headless/headless.git",
+                "reference": "a15e1c8c4773187087bd6da107f1d8fa7423c22c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-Headless/headless/zipball/a15e1c8c4773187087bd6da107f1d8fa7423c22c",
+                "reference": "a15e1c8c4773187087bd6da107f1d8fa7423c22c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "typo3/cms-core": "^12.4 || ^13.4",
+                "typo3/cms-install": "^12.4 || ^13.4"
+            },
+            "conflict": {
+                "typo3/cms-core": "<12.4.21"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.43",
+                "friendsofphp/php-cs-fixer": "^v3",
+                "helmich/typo3-typoscript-lint": "^v3",
+                "justinrainbow/json-schema": "^5",
+                "php-coveralls/php-coveralls": "^2",
+                "phpspec/prophecy-phpunit": "^2",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.12",
+                "phpunit/phpcov": "^8 || ^9 || ^10",
+                "saschaegerer/phpstan-typo3": "^1.1",
+                "seld/jsonlint": "^1.11",
+                "symfony/yaml": "^6.1 || ^7.1",
+                "typo3/cms-form": "^12.4 || ^13.3",
+                "typo3/coding-standards": "^0.8",
+                "typo3/testing-framework": "^8.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/public",
+                    "extension-key": "headless"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfTYPO3\\Headless\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Tymoteusz Motylewski",
+                    "role": "Head"
+                },
+                {
+                    "name": "Łukasz Uznański",
+                    "role": "Developer"
+                },
+                {
+                    "name": "TYPO3 PWA Initiative",
+                    "email": "extensions@macopedia.pl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This extension provides way to output content from TYPO3 in JSON format.",
+            "keywords": [
+                "headless",
+                "json",
+                "pwa",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/TYPO3-Headless/headless/issues",
+                "source": "https://github.com/TYPO3-Headless/headless/tree/v4.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://buy.stripe.com/bIYcPX1wd9hrawUfZ0",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-02-21T12:34:07+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

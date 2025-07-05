@@ -1,6 +1,8 @@
 base: 'https://demoapp.de.test'
 dependencies:
-  - typo3/fluid-styled-content-css
+  - friendsoftypo3/headless
+frontendBase: ''
+headless: 0
 languages:
   -
     title: English

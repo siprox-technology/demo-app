@@ -1,0 +1,63 @@
+# Include the headless extension's TypoScript
+@import 'EXT:headless/Configuration/TypoScript/setup.typoscript'
+
+# Configure the page object to serve our Vue.js app for the home page
+page = PAGE
+page {
+  typeNum = 0
+
+  # Disable default TYPO3 header code and set content type
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders.10.header = Content-Type: text/html; charset=utf-8
+    additionalHeaders.10.replace = 1
+    debug = 0
+    no_cache = 0
+  }
+
+  # No headerData needed as we're using a complete HTML template
+
+  # Configure the body content
+  10 = TEXT
+  10.value (
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>TYPO3 Vue.js Frontend</title>
+        <link rel="stylesheet" href="/vue-frontend/css/app.css">
+      </head>
+      <body>
+        <div id="app"></div>
+        <script src="/vue-frontend/js/chunk-vendors.js"></script>
+        <script src="/vue-frontend/js/app.js"></script>
+      </body>
+    </html>
+  )
+  10.insertData = 0
+
+  # No includeJSFooter needed as we're using a complete HTML template
+}
+
+# Configure the API endpoint for JSON output
+jsonapi = PAGE
+jsonapi {
+  typeNum = 1598950747
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders.10.header = Content-Type: application/json
+    additionalHeaders.10.replace = 1
+    debug = 0
+    no_cache = 1
+  }
+
+  10 = USER
+  10 {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = Headless
+    pluginName = Pi1
+    vendorName = FriendsOfTYPO3
+  }
+}

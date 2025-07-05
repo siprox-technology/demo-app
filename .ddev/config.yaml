@@ -6,6 +6,7 @@ webserver_type: apache-fpm
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
+project_tld: de.test
 database:
     type: mariadb
     version: "10.11"
@@ -207,7 +208,7 @@ corepack_enable: false
 # instead of editing /etc/hosts
 # Defaults to true
 
-project_tld: de.test
+
 # The top-level domain used for project URLs
 # The default "ddev.site" allows DNS lookup via a wildcard
 # If you prefer you can change this to "ddev.local" to preserve

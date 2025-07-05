@@ -2,7 +2,7 @@ base: 'https://demoapp.de.test/'
 dependencies:
   - friendsoftypo3/headless
 frontendBase: ''
-headless: 0
+headless: 1
 languages:
   -
     title: English
